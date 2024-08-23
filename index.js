@@ -13,10 +13,13 @@ dotenv.config({});
 const app = express();
 
 // middleware
+app.use(cors({
+    origin:"https://jobhunt-frontend-seven.vercel.app",
+    methods:["GET","POST"]
+}));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
-app.use(cors());
 
 const PORT = process.env.PORT || 3000;
 
