@@ -8,15 +8,12 @@ import companyRoute from "./routes/company.route.js";
 import jobRoute from "./routes/job.route.js";
 import applicationRoute from "./routes/application.route.js";
 
+const app = express();
 dotenv.config({});
 
-const app = express();
 
 // middleware
-app.use(cors({
-    origin:"https://jobhunt-frontend-seven.vercel.app",
-    methods:["GET","POST"]
-}));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
